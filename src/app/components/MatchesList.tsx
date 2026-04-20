@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate } from '../navigation';
 import { Search } from 'lucide-react';
 import { BottomTabBar } from './BottomTabBar';
-import { StatusBar } from './StatusBar';
 import { MATCHES } from '../data/profiles';
 import { useTinderMatchStore } from '../data/messageStore';
 
@@ -18,9 +17,6 @@ export function MatchesList() {
 
   return (
     <div className="flex flex-col h-full" style={{ background: '#F2F2F7' }}>
-      {/* Status bar — dark icons on light bg */}
-      <StatusBar theme="dark" />
-
       {/* Nav bar */}
       <div
         className="flex-shrink-0 flex items-center justify-between px-4"

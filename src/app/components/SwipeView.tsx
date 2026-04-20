@@ -1,11 +1,4 @@
-import { useState, useRef, useCallback } from 'react';
-import { useNavigate } from '../navigation';
-import { Bell, RotateCcw, X, Star, Heart, Zap } from 'lucide-react';
-import { AnimatePresence } from 'motion/react';
-import { SwipeCard, SwipeCardRef } from './SwipeCard';
-import { BottomTabBar } from './BottomTabBar';
 import { MatchAnimation } from './MatchAnimation';
-import { StatusBar } from './StatusBar';
 import { SWIPE_PROFILES, Profile, USER_PROFILE } from '../data/profiles';
 
 export function SwipeView() {
@@ -59,11 +52,6 @@ export function SwipeView() {
 
   return (
     <div className="flex flex-col h-full relative" style={{ background: '#0d0d0d' }}>
-      {/* Status bar overlaid — white icons */}
-      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 25 }}>
-        <StatusBar theme="light" />
-      </div>
-
       {/* Top app bar — liquid glass */}
       <div style={{ paddingTop: 'calc(env(safe-area-inset-top, 44px) + 0px)', flexShrink: 0 }}>
         <div

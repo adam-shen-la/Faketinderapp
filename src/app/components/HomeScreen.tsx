@@ -83,8 +83,8 @@ export function HomeScreen() {
         `,
       }}
     >
-      {/* ── Status bar ── */}
-      <StatusBarRow time={time} />
+      {/* ── Spacer for system status bar ── */}
+      <div style={{ height: 'env(safe-area-inset-top, 50px)', flexShrink: 0 }} />
 
       {/* ── Date + Clock ── */}
       <div className="flex flex-col items-center" style={{ marginTop: 8, gap: 2 }}>
@@ -213,61 +213,6 @@ function AppIconCell({
         </span>
       )}
     </div>
-  );
-}
-
-/* ─────────────────────────── StatusBarRow ────────────────────── */
-function StatusBarRow({ time }: { time: string }) {
-  return (
-    <div
-      style={{
-        paddingTop: 'env(safe-area-inset-top, 14px)',
-        paddingLeft: 18,
-        paddingRight: 18,
-        paddingBottom: 6,
-        display: 'flex',
-        alignItems: 'flex-end',
-        flexShrink: 0,
-      }}
-    >
-      <span style={{ color: 'white', fontSize: '15px', fontWeight: 600, flex: 1, letterSpacing: '-0.3px' }}>
-        {time}
-      </span>
-      <div style={{ flex: 1 }} />
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 6 }}>
-        <SignalIcon />
-        <WifiIcon />
-        <BatteryIcon />
-      </div>
-    </div>
-  );
-}
-
-function SignalIcon() {
-  return (
-    <svg width="17" height="12" viewBox="0 0 17 12">
-      {[0, 1, 2, 3].map((i) => (
-        <rect key={i} x={i * 4.5} y={12 - (i + 1) * 3} width="3" height={(i + 1) * 3} rx="0.6" fill="white" />
-      ))}
-    </svg>
-  );
-}
-function WifiIcon() {
-  return (
-    <svg width="16" height="12" viewBox="0 0 24 18" fill="white">
-      <circle cx="12" cy="15.5" r="2" />
-      <path d="M5.5 9.5 A9 9 0 0 1 18.5 9.5" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
-      <path d="M2 6 A14 14 0 0 1 22 6" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" />
-    </svg>
-  );
-}
-function BatteryIcon() {
-  return (
-    <svg width="25" height="12" viewBox="0 0 25 12">
-      <rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="rgba(255,255,255,0.4)" strokeWidth="1" fill="none" />
-      <rect x="2" y="2" width="17.5" height="8" rx="2" fill="white" />
-      <path d="M23 4.5V7.5C23.83 7.22 24.5 6.67 24.5 6S23.83 4.78 23 4.5Z" fill="rgba(255,255,255,0.4)" />
-    </svg>
   );
 }
 

@@ -1,7 +1,6 @@
 import { useNavigate } from '../navigation';
 import { Settings, Edit3, MapPin, ChevronLeft } from 'lucide-react';
 import { BottomTabBar } from './BottomTabBar';
-import { StatusBar } from './StatusBar';
 import { USER_PROFILE } from '../data/profiles';
 
 const PHOTO_SLOTS = [
@@ -20,9 +19,6 @@ export function OwnProfile() {
         background: '#111',
       }}
     >
-      {/* Status bar */}
-      <StatusBar theme="light" />
-
       {/* Nav bar */}
       <div
         className="flex-shrink-0 flex items-center justify-between px-4"
