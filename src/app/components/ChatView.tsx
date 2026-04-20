@@ -66,37 +66,38 @@ export function ChatView() {
 
       {/* ── Nav bar ── */}
       <div
-        className="flex-shrink-0 flex items-center px-3 gap-2"
+        className="flex-shrink-0"
         style={{
-          height: 'calc(64px + env(safe-area-inset-top, 0px))',
           paddingTop: 'env(safe-area-inset-top, 0px)',
           background: 'white',
           borderBottom: '0.5px solid rgba(0,0,0,0.12)',
         }}
       >
-        <button
-          onClick={() => navigate('/tinder/matches')}
-          style={{ color: '#FE3C72', minWidth: 44, height: 44, display: 'flex', alignItems: 'center' }}
-        >
-          <ChevronLeft size={26} />
-        </button>
-
-        <div className="flex items-center gap-2.5 flex-1">
-          <div
-            className="rounded-full overflow-hidden flex-shrink-0"
-            style={{ width: 40, height: 40, border: '1.5px solid rgba(0,0,0,0.1)' }}
+        <div className="flex items-center px-3 gap-2" style={{ height: 64 }}>
+          <button
+            onClick={() => navigate('/tinder/matches')}
+            style={{ color: '#FE3C72', minWidth: 44, height: 44, display: 'flex', alignItems: 'center' }}
           >
-            <img src={match.photo} alt={match.name} className="w-full h-full object-cover" />
-          </div>
-          <div className="text-left">
-            <p style={{ color: '#000', fontSize: '16px', fontWeight: 600, lineHeight: 1 }}>{match.name}</p>
-            <p style={{ color: '#8E8E93', fontSize: '12px', marginTop: 2 }}>Active now</p>
-          </div>
-        </div>
+            <ChevronLeft size={26} />
+          </button>
 
-        <button style={{ color: '#8E8E93', minWidth: 44, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
-          <MoreHorizontal size={22} />
-        </button>
+          <div className="flex items-center gap-2.5 flex-1">
+            <div
+              className="rounded-full overflow-hidden flex-shrink-0"
+              style={{ width: 40, height: 40, border: '1.5px solid rgba(0,0,0,0.1)' }}
+            >
+              <img src={match.photo} alt={match.name} className="w-full h-full object-cover" />
+            </div>
+            <div className="text-left">
+              <p style={{ color: '#000', fontSize: '16px', fontWeight: 600, lineHeight: 1 }}>{match.name}</p>
+              <p style={{ color: '#8E8E93', fontSize: '12px', marginTop: 2 }}>Active now</p>
+            </div>
+          </div>
+
+          <button style={{ color: '#8E8E93', minWidth: 44, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+            <MoreHorizontal size={22} />
+          </button>
+        </div>
       </div>
 
       {/* ── Match preview banner ── */}

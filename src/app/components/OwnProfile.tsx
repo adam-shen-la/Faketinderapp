@@ -21,9 +21,9 @@ export function OwnProfile() {
     >
       {/* Nav bar */}
       <div
-        className="flex-shrink-0 flex items-center justify-between px-4"
+        className="flex-shrink-0"
         style={{
-          height: 56,
+          paddingTop: 'env(safe-area-inset-top, 44px)',
           background: 'rgba(20,20,20,0.8)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
@@ -32,16 +32,18 @@ export function OwnProfile() {
           zIndex: 10,
         }}
       >
-        <button
-          onClick={() => navigate('/tinder')}
-          style={{ color: '#FE3C72', minWidth: 36, minHeight: 44, display: 'flex', alignItems: 'center' }}
-        >
-          <ChevronLeft size={26} />
-        </button>
-        <p style={{ color: 'white', fontSize: '18px', fontWeight: 700 }}>My Profile</p>
-        <button style={{ color: 'rgba(255,255,255,0.6)', minWidth: 36, minHeight: 44, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <Settings size={22} />
-        </button>
+        <div className="flex items-center justify-between px-4" style={{ height: 56 }}>
+          <button
+            onClick={() => navigate('/tinder')}
+            style={{ color: '#FE3C72', minWidth: 36, minHeight: 44, display: 'flex', alignItems: 'center' }}
+          >
+            <ChevronLeft size={26} />
+          </button>
+          <p style={{ color: 'white', fontSize: '18px', fontWeight: 700 }}>My Profile</p>
+          <button style={{ color: 'rgba(255,255,255,0.6)', minWidth: 36, minHeight: 44, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Settings size={22} />
+          </button>
+        </div>
       </div>
 
       {/* Scrollable content */}

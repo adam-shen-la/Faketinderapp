@@ -19,30 +19,32 @@ export function MatchesList() {
     <div className="flex flex-col h-full" style={{ background: '#F2F2F7' }}>
       {/* Nav bar */}
       <div
-        className="flex-shrink-0 flex items-center justify-between px-4"
+        className="flex-shrink-0"
         style={{
-          height: 56,
+          paddingTop: 'env(safe-area-inset-top, 44px)',
           background: 'rgba(247,247,247,0.96)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
           borderBottom: '0.5px solid rgba(0,0,0,0.12)',
         }}
       >
-        <div style={{ minWidth: 36 }} />
-        <p
-          style={{
-            color: '#000',
-            fontSize: '18px',
-            fontWeight: 700,
-            fontFamily: '"Nunito", system-ui, sans-serif',
-            letterSpacing: '-0.3px',
-          }}
-        >
-          Matches
-        </p>
-        <button style={{ color: '#FE3C72', minWidth: 36, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
-          <Search size={20} />
-        </button>
+        <div className="flex items-center justify-between px-4" style={{ height: 56 }}>
+          <div style={{ minWidth: 36 }} />
+          <p
+            style={{
+              color: '#000',
+              fontSize: '18px',
+              fontWeight: 700,
+              fontFamily: '"Nunito", system-ui, sans-serif',
+              letterSpacing: '-0.3px',
+            }}
+          >
+            Matches
+          </p>
+          <button style={{ color: '#FE3C72', minWidth: 36, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+            <Search size={20} />
+          </button>
+        </div>
       </div>
 
       <div className="flex-1 overflow-y-auto" style={{ overscrollBehavior: 'contain', background: 'white' }}>

@@ -1,3 +1,9 @@
+import { useState, useRef, useCallback } from 'react';
+import { useNavigate } from '../navigation';
+import { AnimatePresence } from 'motion/react';
+import { Bell, Heart, X, Star, RotateCcw, Zap } from 'lucide-react';
+import { BottomTabBar } from './BottomTabBar';
+import { SwipeCard, SwipeCardRef } from './SwipeCard';
 import { MatchAnimation } from './MatchAnimation';
 import { SWIPE_PROFILES, Profile, USER_PROFILE } from '../data/profiles';
 
@@ -53,12 +59,11 @@ export function SwipeView() {
   return (
     <div className="flex flex-col h-full relative" style={{ background: '#0d0d0d' }}>
       {/* Top app bar — liquid glass */}
-      <div style={{ paddingTop: 'calc(env(safe-area-inset-top, 44px) + 0px)', flexShrink: 0 }}>
+      <div style={{ paddingTop: 'calc(env(safe-area-inset-top, 44px) + 0px)', flexShrink: 0, background: 'rgba(20,20,20,0.55)' }}>
         <div
           className="flex items-center justify-between px-4"
           style={{
             height: 56,
-            background: 'rgba(20,20,20,0.55)',
             backdropFilter: 'blur(30px)',
             WebkitBackdropFilter: 'blur(30px)',
             borderBottom: '0.5px solid rgba(255,255,255,0.08)',
